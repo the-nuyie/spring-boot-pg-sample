@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Column;
 
 @Entity
-@Table(name = "post")
+@Table(name = "Post")
 public class Post {
 
     @Id
@@ -21,6 +21,8 @@ public class Post {
 
     @Column(name = "post", columnDefinition = "TEXT")
     private String post;
+
+
 
     public Long getPostId() {
         return postId;

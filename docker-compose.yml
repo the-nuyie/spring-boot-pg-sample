@@ -4,11 +4,12 @@ services:
     image: 'spring-boot-pg-sample:v1.0'
     ports:
       - "8084:8080"
+    container_name: spring-boot-pg-sample
     depends_on:
       PostgreSQL:
         condition: service_healthy
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://PostgreSQL:5432/postgres
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql-for-spring-boot-sample:5432/postgres
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=password
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
@@ -17,6 +18,7 @@ services:
     image: postgres
     ports:
       - "5432:5432"
+    container_name: postgresql-for-spring-boot-sample
     environment:
       - POSTGRES_PASSWORD=password
       - POSTGRES_USER=postgres
